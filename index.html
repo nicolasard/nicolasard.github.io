@@ -3,21 +3,59 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <style>
+    body  {
+    color:#fff;
+    text-align:center;
+    background-image: url('http://static1.1.sqspcdn.com/static/p/444336/3454799/1255466834543/gompa-background-wide.jpg?token=2OrGjKSXKYNfu%2BJ%2BVfxoG73hlDg%3D');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-size: 12px;
+    font-family: 'Dancing Script', cursive;
+    -webkit-animation: backgroundScroll 15s linear 1;
+    -webkit-animation-fill-mode: forwards;
+    animation: backgroundScroll 15s linear 1;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -180px 0px;}
+}
+
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -180px 0px;}
+
+}
+
+#mainContainer{
+    background-color: white;
+    padding: 30px;
+}
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
   <body>
-    <div>
+    <div id="mainContainer">
         <img class="rounded mx-auto d-block" width="100px" src="https://scontent.fsst1-2.fna.fbcdn.net/v/t1.0-9/15230680_10210640981317635_9068500717354869796_n.jpg?oh=479033cac4be27931de5bfb3b0d819e6&oe=5AD3247D" />
     <h2 class="text-center display-4">Hi, i'm Nicolas Ardison</h2>
     <p class="text-center lead">
         I like to play with whatever software language, know ppl from other cultures.
     </p>
     <p class="text-center lead">
-        feel free to contact or add me on my social networks.
+        Feel free to contact or add me on my social networks.
     </p>
+    <div class="text-center">
+            <a href="https://github.com/nicolasard"><i class="fa fa-github" aria-hidden="true"></i> nicolasard</a>
+            <a href="https://facebook.com/nicolas.ard"><i class="fa fa-facebook" aria-hidden="true"></i> nicolas.ard</a>
+            <a href="https://instagram.com/nicolasard"><i class="fa fa-instagram" aria-hidden="true"></i> nicolasard</a>
+    </div>
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
