@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Afip files transformer</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h2>Afip files transformer</h2>
+    <input type="file" id="file-input" /><br></br>Amount of registers:<p></p>
+    <button id="read-button">Read File</button><br><br>
+    <textarea id="result" rows = "5" cols = "60" name = "description" style="width:100%;"></textarea>
+    <script>
+            facturas = [];
+
+            function processLine(valor, indice, array) {
+                values = valor.split(",");
+                if(!values[0].localeCompare("\"Fecha\"")){
+                    return; //This is a header we don't want this 
+                }
+                //document.getElementById("result").value = document.getElementById("result").value + processDate(values[0]); //Date
+                //document.getElementById("result").value = document.getElementById("result").value + processDate(values[0]); //Link Afip?
+                resultado = '';
+                resultado += processDate(values[0].replace(/"/g, '')); //Fecha
+                resultado +=  values[2].split("-")[0].replace(/"/g, '').replace(/\s/g, '').padStart(3, '0'); //Tipo de comprobante
+                resultado +=  values[2].replace(/"/g, '').padStart(4, '0'); //Punto de Venta
+                resultado +=  values[3].replace(/"/g, '').padStart(8, '0'); //Numero de comprobante
+                resultado +=  processNumber(values[11].replace(/"/g, ''),13); //Importe Neto
+                resultado +=  processNumber(values[14].replace(/"/g, ''),13); //Impuestos la operacion Incluye IVA
+                resultado +=  processNumber(values[15].replace(/"/g, ''),13); //Importe Total de la operacion
+                resultado += '\n';
+
+                document.getElementById("result").value = document.getElementById("result").value + resultado;
+                console.log(values);
+            }
+
+            function processNumber(numero,padding){
+                return Math.floor(numero).toFixed(2).toString().replace('.', '').padStart(padding, '0');
+            }
+
+            function processDate(date){
+                return moment(Date.parse(date)).format('YYYYMMDD');
+            }
+
+            document.querySelector("#read-button").addEventListener('click', function() {
+            if(document.querySelector("#file-input").files.length == 0) {
+                alert('Error : No file selected');
+                return;
+            }
+        
+            // first file selected by user
+            var file = document.querySelector("#file-input").files[0];
+
+            // read the file
+            var reader = new FileReader();
+        
+            // file reading started
+            reader.addEventListener('loadstart', function() {
+                console.log('File reading started');
+            });
+        
+            // file reading finished successfully
+            reader.addEventListener('load', function(e) {
+                // contents of file in variable     
+                var text = e.target.result;
+
+                text.split("\n").forEach(processLine);
+            });
+        
+            // file reading failed
+            reader.addEventListener('error', function() {
+                alert('Error : Failed to read file');
+            });
+        
+            // file read progress 
+            reader.addEventListener('progress', function(e) {
+                if(e.lengthComputable == true) {
+                    var percent_read = Math.floor((e.loaded/e.total)*100);
+                    console.log(percent_read + '% read');
+                }
+            });
+        
+            // read as text file
+            reader.readAsText(file);
+        });
+        </script>
+</body>
+</html>
