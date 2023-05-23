@@ -1,0 +1,16 @@
+{
+  "category": "Medicina General (Hausarzt)",
+  "docs": [
+    {
+      "name": "Dr. Dagmar Rico-Lopez",
+      "address": "Fischbacher Hauptstraße 175 e",
+      "phone": "0911 830475",
+      "url": "https://www.dr-ricolopez.de/"
+    },
+    {
+      "name": "Dr. Norman Thom",
+      "address": "Kesslerplatz 3",
+      "phone": "0911 203912"
+    }
+  ]
+}
