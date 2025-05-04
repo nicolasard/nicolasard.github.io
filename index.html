@@ -1,82 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About Me</title>
     <style>
-body  {
-    color:#fff;
-    text-align:center;
-    font-size: 12px;
-    font-family: 'Dancing Script', cursive;
-    background: rgb(2,0,36);
-    background: linear-gradient(146deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(175,175,175,1) 100%);
-}
-	    
-#mainContainer{
-    background-color: white;
-    padding: 30px;
-    margin-top: 4%;
-    opacity: 0.86;
-}
+        body {
+          font-family: Arial, sans-serif;
+          margin: 2rem;
+          background: #f9f9f9;
+          color: #333;
+        }
+        .container {
+          max-width: 800px;
+          margin: auto;
+        }
+        img.profile {
+          width: 150px;
+          border-radius: 50%;
+        }
+        .social-links a {
+          margin-right: 1rem;
+          text-decoration: none;
+          color: #0077b5; /* LinkedIn blue */
+        }
+        h2 {
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 0.3rem;
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        li {
+          margin-bottom: 0.5rem;
+        }
+        a {
+          color: #0366d6;
+        }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  </head>
-  <body>
-    <div id="mainContainer">
-        <img class="rounded mx-auto d-block" width="100px" src="./me.jpg" />
-    <h2 class="text-center display-4">Hi, I'm Nicolas Ardison</h2>
-    <p class="text-center lead">
-        I like to play with whatever software language, meet from other cultures.
-    </p>
-    <p class="text-center lead">
-        Feel free to contact or add me on my social networks.
-    </p>
-    <div class="text-center">
-            <a href="https://github.com/nicolasard"><i class="fa fa-github" aria-hidden="true"></i> nicolasard</a>
-            <a href="https://www.linkedin.com/in/nicolas-ardison"><i class="fa fa-linkedin-square" aria-hidden="true"></i> nicolas-ardison</a>
-            <a href="https://facebook.com/nicolas.ard"><i class="fa fa-facebook" aria-hidden="true"></i> nicolas.ard</a>
-            <a href="https://instagram.com/nicolasard"><i class="fa fa-instagram" aria-hidden="true"></i> nicolasard</a>
+</head>
+<body>
+<div class="container">
+    <h1>About Me</h1>
+    <img class="profile" src="me.jpg" alt="Your Name" />
+    <p>Hi, I'm Nicolas Ardison, a software architect. I'm from Argentina, living in south Germany, I like to hike in the forest and mountains, run. And I'm currently learning Deutsch.</p>
+    <p>Besides I studied Telecommunications engineering. I have been all my professional life working in software engineering. And in very, very deep in the payments industry in issuing and lastly in acquiring.</p>
+    <p>If you are interested to hire me you can find my cv <a href="./cv_english_2025.pdf">here</a>.</p>
+    <div class="social-links">
+        <h2>Connect with me</h2>
+        <a href="https://www.linkedin.com/in/nicolas-ardison/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/nicolasard" target="_blank">GitHub</a>
+        <a href="https://www.instagram.com/nicolasard" target="_blank">Instagram</a>
     </div>
+
+    <div class="linkedin-articles">
+        <h2>LinkedIn Articles</h2>
+        <ul>
+            <li><a href="https://www.linkedin.com/pulse/writing-custom-telegraf-processor-get-ip-location-data-ardison-tncfe" target="_blank">Writing a custom Telegraf processor to get IP location data.</a></li>
+        </ul>
     </div>
-	<div class="row" style="opacity: 0.86">
-	
-	<div class="card mt-5 ml-5 col-sm-2" >
-	  <div class="card-body">
-		<h5 class="card-title">Spring Batch</h5>
-		<p class="card-text">You can find my sandbox repo of Spring batch. I used this feature in the banking sector where I work.</p>
-		<a href="#" class="card-link">Go Repo</a>
-	  </div>
-	</div>
-	<div class="card mt-5 ml-5 col-sm-2" >
-	  <div class="card-body">
-		<h5 class="card-title">Spring APIs</h5>
-		<p class="card-text">I like how easy it is to create Rest Apis with Spring framework. In my sandbox repo I use to write MarkDown files for the people who read these later.</p>
-		<a href="#" class="card-link">Go Repo</a>
-	  </div>
-	</div>
-	<div class="card mt-5 ml-5 col-sm-2">
-	  <div class="card-body">
-		<h5 class="card-title">ReactJs</h5>
-		<p class="card-text"></p>
-		<a href="#" class="card-link">Go Repo</a>
-	  </div>
-	</div>
-	  <div class="card mt-5 ml-5 col-sm-2">
-	  <div class="card-body">
-		<h5 class="card-title">Ops. Docs</h5>
-		<p class="card-text">As developer you usually need to do Ops things.</p>
-		<a href="https://github.com/nicolasard/personalStuff" class="card-link">Go Repo</a>
-	  </div>
-	</div>
-	</div>
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  </body>
+
+    <div class="github-projects">
+        <h2>Featured GitHub Repositories</h2>
+        <ul>
+            <li><a href="https://github.com/nicolasard/telegraf_iplocation_plugin" target="_blank">Telegraf IP Location plugin</a> - A plugin for telegraf of how to get an ip geo reference. I wrote a Linkeding article about this.</li>
+            <li><a href="https://github.com/nicolasard/SpringBatchStuff" target="_blank">Spring Batch Sandbox</a> - My personal sandbox for Spring Batch</li>
+        </ul>
+    </div>
+</div>
+</body>
 </html>
